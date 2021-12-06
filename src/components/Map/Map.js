@@ -10,19 +10,18 @@ const Map = () => {
     const [lng, setLng] = useState(4.834277);
     const [lat, setLat] = useState(45.763420);
     const [zoom, setZoom] = useState(13);
+    const [dark, setDark] = useState(true);
     useEffect(() => {
         if (map.current) return; // initialize map only once
         map.current = new mapboxgl.Map({
             container: mapContainer.current,
-            style: 'mapbox://styles/theorionsb/ckift6f5k4xj619k0dnphz0lr',
+            style: 'mapbox://styles/mapbox/streets-v11',
             center: [lng, lat],
             zoom: zoom
         });
     });
     return (
-        <div>
-            <div ref={mapContainer} className=" -mt-5 w-full h-screen p-0"/>
-        </div>
+            <div ref={mapContainer} className="-mt-4 w-full max-h-screen h-screen overflow-y-hidden p-0"/>
     )
 }
 
