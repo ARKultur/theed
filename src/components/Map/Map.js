@@ -2,6 +2,7 @@ import mapboxgl from 'mapbox-gl'; // eslint-disable-line import/no-webpack-loade
 import React, { useState, useRef, useEffect } from "react";
 import '../../../node_modules/mapbox-gl/dist/mapbox-gl.css'
 import style from './map.module.css';
+import places from '../../places.json';
 
 const Map = () => {
     mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_KEY;
@@ -10,19 +11,8 @@ const Map = () => {
     const [lng, setLng] = useState(4.8348);
     const [lat, setLat] = useState(45.7556);
     const [zoom, setZoom] = useState(15);
+    const [markers, setMarkers] = useState([]);
 
-    const markers = [
-        {
-            name: "Hotel Dieu",
-            lng: 4.8370,
-            lat: 45.7590
-        },
-        {
-            name: "Place Bellecour",
-            lng: 4.8320,
-            lat: 45.7576
-        },
-    ]
     useEffect(() => {
         if (map.current) return; // initialize map only once
         map.current = new mapboxgl.Map({
@@ -31,14 +21,12 @@ const Map = () => {
             center: [lng, lat],
             zoom: zoom
         });
-        markers.forEach((value, idx) => {
-            new mapboxgl.Marker().setPopup(new mapboxgl.Popup().setHTML(`<h2>${value.name}</h2><button class="p-3 bg-green-200 rounded-lg">Edit</button>`)).setLngLat([value.lng, value.lat]).addTo(map.current);
+        places.places.forEach((value, idx) => {
+            setMarkers(state => [...state, new mapboxgl.Marker().setPopup(new mapboxgl.Popup().setHTML(`<h2>${value.name}</h2><button class="p-3 bg-green-200 rounded-lg">Edit</button>`)).setLngLat([value.lng, value.lat]).addTo(map.current)]);
         })
     });
     return (
-        <>
-            <div ref={mapContainer} className={style.mapboxgl_canvas + " w-full -mt-5"} />
-        </>
+        <div ref={mapContainer} className={style.mapboxgl_canvas + " w-full -mt-4 col-span-3"} />
     )
 }
 
