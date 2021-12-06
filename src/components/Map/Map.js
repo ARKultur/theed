@@ -36,9 +36,7 @@ const Map = () => {
         })
     });
     return (
-        <>
-            <div ref={mapContainer} className={style.mapboxgl_canvas + " w-full -mt-5"} />
-        </>
+        <div ref={mapContainer} className={style.mapboxgl_canvas + " w-full -mt-4 col-span-3"} />
     )
 }
 
