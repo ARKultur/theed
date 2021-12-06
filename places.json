@@ -1,0 +1,14 @@
+{
+    "places": [
+        {
+            "name": "Hotel Dieu",
+            "lng": 4.8370,
+            "lat": 45.7590
+        },
+        {
+            "name": "Place Bellecour",
+            "lng": 4.8320,
+            "lat": 45.7576
+        }
+    ]
+}
