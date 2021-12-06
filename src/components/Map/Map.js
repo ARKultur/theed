@@ -31,8 +31,8 @@ const Map = () => {
             center: [lng, lat],
             zoom: zoom
         });
-        markers.forEach((value) => {
-            new mapboxgl.Marker().setLngLat([value.lng, value.lat]).addTo(map.current);
+        markers.forEach((value, idx) => {
+            new mapboxgl.Marker().setPopup(new mapboxgl.Popup().setHTML(`<h2>${value.name}</h2><button class="p-3 bg-green-200 rounded-lg">Edit</button>`)).setLngLat([value.lng, value.lat]).addTo(map.current);
         })
     });
     return (
