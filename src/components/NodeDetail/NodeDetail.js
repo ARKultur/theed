@@ -1,9 +1,11 @@
 import React, {useState, useRef, useEffect} from "react";
+import {useParams} from "react-router-dom";
 
 const NodeDetail = () => {
+  const params = useParams();
   return (
     <div className={"flex w-full justify-center"}>
-      <h3>Node Detail route need to be /nodes/edit/</h3>
+      <h3>You are on node {params.id}</h3>
     </div>
   )
 }

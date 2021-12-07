@@ -7,8 +7,8 @@ const SingleNodeView = () => {
 
   return (
     <div>
-      <h3>Node id: {params.id}</h3>
-      <NodeDetail/>
+      <NodeDetail id={params.id}/>
+      <button onClick={() => nav("/nodes")} className="transition duration-150 ease-in-out m-3 rounded-lg bg-blue-500 hover:bg-blue-700 hover:text-white cursor-pointer p-3">Back to nodes</button>
     </div>
   )
 }
