@@ -13,8 +13,6 @@ const ErrorView = () => {
         </div>
       </div>
     </div>
-
-
   )
 }
 export default ErrorView;
