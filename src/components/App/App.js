@@ -3,6 +3,7 @@ import HomeView from "../../views/HomeView";
 import NodesView from "../../views/NodesView";
 import SingleNodeView from "../../views/NodesView/SingleNodeView";
 import ErrorView from "../../views/ErrorView";
+import AdminView from "../../views/AdminView";
 import Header from '../Header';
 import Map from '../Map'
 import './App.css';
@@ -20,7 +21,7 @@ function App() {
           <Route path="/nodes/add" element={<p>bite</p>} />
           <Route path="/nodes/stats" element={<p>bite</p>} />
           <Route path="/nodes/edit/:id" element={<SingleNodeView/>} />
-          <Route path="/admin/" element={<p>bite</p>} />
+          <Route path="/admin/" element={<AdminView/>} />
           <Route path="*" element={<ErrorView/>} />
         </Routes>
       </Router>
