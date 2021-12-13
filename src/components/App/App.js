@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate, } from "react-router-dom";
+import { mapContext } from "../../contexts/mapContext";
 import HomeView from "../../views/HomeView";
 import NodesView from "../../views/NodesView";
 import SingleNodeView from "../../views/NodesView/SingleNodeView";
@@ -10,7 +12,10 @@ import './App.css';
 import errorView from "../../views/ErrorView";
 
 function App() {
+  const [lng, setLng] = useState(4.8348);
+  const [lat, setLat] = useState(45.7556);
   return (
+    <mapContext.Provider value={{lng, setLng, lat, setLat}}>
     <div>
       <Router>
       <Header/>
@@ -26,7 +31,8 @@ function App() {
         </Routes>
       </Router>
     </div>
-  );
+    </mapContext.Provider>
+);
 }
 
 export default App;
