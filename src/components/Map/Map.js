@@ -1,20 +1,34 @@
 import mapboxgl from 'mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import '../../../node_modules/mapbox-gl/dist/mapbox-gl.css'
 import style from './map.module.css';
 import places from '../../places.json';
+import { mapContext } from '../../contexts/mapContext';
 
 const Map = () => {
     mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_KEY;
+    const { lng, lat } = useContext(mapContext)
     const mapContainer = useRef(null);
     const map = useRef(null);
-    const [lng, setLng] = useState(4.8348);
-    const [lat, setLat] = useState(45.7556);
+    // const [lng, setLng] = useState(4.8348);
+    // const [lat, setLat] = useState(45.7556);
     const [zoom, setZoom] = useState(15);
     const [markers, setMarkers] = useState([]);
 
     useEffect(() => {
-        if (map.current) return; // initialize map only once
+        if (map.current) {
+            const center = map.current.getCenter();
+            if (center.lng !== lng) {
+                map.current.flyTo({center:[lng, lat] });
+                new mapboxgl.Popup({ closeOnClick: false })
+                    .setLngLat([lng, lat])
+                    .setHTML(`<div>
+                    <h1>Edit me pls!</h1>
+                    </div>`)
+                    .addTo(map.current);
+            }
+            return; // initia}lize map only once
+        }
         map.current = new mapboxgl.Map({
             container: mapContainer.current,
             style: 'mapbox://styles/mapbox/streets-v11',
