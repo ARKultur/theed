@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import places from '../../places.json';
 import {useNavigate} from "react-router-dom";
 
@@ -15,7 +15,7 @@ const Nodes = () => {
         </li>
       ]);
     })
-  }, [])
+  }, [nav])
   return (
     <div className={"flex w-full justify-center"}>
       <ul className="w-1/2 border-collapse text-left">

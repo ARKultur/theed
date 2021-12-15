@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from "react";
+import React from "react";
 import {useParams} from "react-router-dom";
 import places from '../../places.json';
 

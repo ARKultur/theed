@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import { mapContext } from "../../contexts/mapContext";
 import HomeView from "../../views/HomeView";
 import NodesView from "../../views/NodesView";
@@ -7,9 +7,7 @@ import SingleNodeView from "../../views/NodesView/SingleNodeView";
 import ErrorView from "../../views/ErrorView";
 import AdminView from "../../views/AdminView";
 import Header from '../Header';
-import Map from '../Map'
 import './App.css';
-import errorView from "../../views/ErrorView";
 import LoginView from "../../views/LoginView/LoginView";
 import { userContext } from '../../contexts/usrContext';
 
