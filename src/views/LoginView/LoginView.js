@@ -7,7 +7,7 @@ import qs from 'querystring';
 const LoginView = () => {
     const nav = useNavigate();
     const [inputs, setInputs] = useState({ email: '', password: '' });
-    const { user, setUser } = useContext(userContext);
+    const { setUser } = useContext(userContext);
     const [alerts, setAlerts] = useState();
     const logUser = (e) => {
         e.preventDefault();
@@ -26,10 +26,11 @@ const LoginView = () => {
     }
     return (
         <div className="flex flex-col w-96 m-auto">
+            <h1 className="text-xl font-bold text-blue-400">Please log in</h1>
             <form className="flex flex-col">
-                <input id="arkemail" onChange={(e) => setInputs({ ...inputs, email: e.target.value })} className="grid-cols-1 my-2 border-2 border-gray-300 p-2" type="email" placeholder="Email" />
-                <input id="password" onChange={(e) => setInputs({ ...inputs, password: e.target.value })} className="grid-cols-1 my-2 border-2 border-gray-300 p-2" type="password" placeholder="password" />
-                <button type="submit" className="bg-blue-400 p-2 rounded-md" onClick={logUser}>log me in daddy</button>
+                <input id="arkemail" onChange={(e) => setInputs({ ...inputs, email: e.target.value })} className="rounded-md my-2 border-2 shadow-sm border-gray-200 focus:bg-blue-100 focus:shadow-inner transition ease-in-out duration-150 p-2" type="email" placeholder="Email" />
+                <input id="password" onChange={(e) => setInputs({ ...inputs, password: e.target.value })} className="rounded-md my-2 border-2 shadow-sm border-gray-200 focus:bg-blue-100 focus:shadow-inner transition ease-in-out duration-150 p-2" type="password" placeholder="password" />
+                <button type="submit" className="bg-blue-400 text-white font-bold hover:bg-green-300 hover:text-green-600 transition ease-in-out p-2 rounded-lg shadow-md" onClick={logUser}>log me in daddy</button>
             </form>
             {alerts}
         </div>
