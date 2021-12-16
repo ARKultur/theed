@@ -49,7 +49,7 @@ const Map = () => {
             center: [lng, lat],
             zoom: zoom
         });
-        axios.get('http://localhost:4000/api/map/address', {headers: {"Authorization": `Bearer ${user.jwt}`}})
+        axios.get(`${process.env.REACT_APP_NABOO_HOST}/api/map/address`, {headers: {"Authorization": `Bearer ${user.jwt}`}})
         .then((res) => {
             console.log(res.data);
             console.log(res.data.data[0].latitude);

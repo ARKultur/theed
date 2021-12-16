@@ -9,7 +9,7 @@ const NewNodePopup = (props) => {
     const submit = (e) => {
         e.preventDefault();
         console.log(user.jwt);
-        axios.post('http://localhost:4000/api/map/address', {
+        axios.post(`${process.env.REACT_APP_NABOO_HOST}/api/map/address`, {
             address: {
                 city: "Fuck you",
                 country: "Fuck you",

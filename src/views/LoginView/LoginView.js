@@ -12,7 +12,7 @@ const LoginView = () => {
     const logUser = (e) => {
         e.preventDefault();
         console.log(inputs);
-        axios.post('http://localhost:4000/api/login', qs.stringify(inputs))
+        axios.post(`${process.env.REACT_APP_NABOO_HOST}/api/login`, qs.stringify(inputs))
             .then((res) => {
                 if (res.status === 200) {
                     setAlerts();

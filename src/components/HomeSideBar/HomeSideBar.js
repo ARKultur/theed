@@ -9,7 +9,7 @@ const HomeSideBar = () => {
     console.log(`${lng} ${setLng} ${lat} ${setLat}`);
     useEffect(() => {
         setSideBarList([]);
-        axios.get('http://localhost:4000/api/map/address', { headers: { "Authorization": `Bearer ${user.jwt}` } })
+        axios.get(`${process.env.REACT_APP_NABOO_HOST}/api/map/address`, { headers: { "Authorization": `Bearer ${user.jwt}` } })
             .then((res) => {
                 res.data.data.forEach((value, idx) => {
                     setSideBarList(state => [...state,
