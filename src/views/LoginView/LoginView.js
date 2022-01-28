@@ -30,7 +30,7 @@ const LoginView = () => {
             <form className="flex flex-col">
                 <input id="arkemail" onChange={(e) => setInputs({ ...inputs, email: e.target.value })} className="rounded-md my-2 border-2 shadow-sm border-gray-200 focus:bg-blue-100 focus:shadow-inner transition ease-in-out duration-150 p-2" type="email" placeholder="Email" />
                 <input id="password" onChange={(e) => setInputs({ ...inputs, password: e.target.value })} className="rounded-md my-2 border-2 shadow-sm border-gray-200 focus:bg-blue-100 focus:shadow-inner transition ease-in-out duration-150 p-2" type="password" placeholder="password" />
-                <button type="submit" className="bg-blue-400 text-white font-bold hover:bg-green-300 hover:text-green-600 transition ease-in-out p-2 rounded-lg shadow-md" onClick={logUser}>log me in daddy</button>
+                <button type="submit" className="bg-blue-400 text-white font-bold hover:bg-green-300 hover:text-green-600 transition ease-in-out p-2 rounded-lg shadow-md" onClick={logUser}>Sign in</button>
             </form>
             {alerts}
         </div>
