@@ -3,7 +3,7 @@ import './style.css'
 const hello = document.createElement('h1');
 const wrapper = document.createElement('div');
 
-hello.textContent = 'Hello World!';
+hello.textContent = 'Hello World !';
 hello.classList.add(
   'bg-gradient-to-r', 'from-green-400', 'to-blue-500',
   'text-transparent', 'text-9xl', 'bg-clip-text', 'font-extrabold'
