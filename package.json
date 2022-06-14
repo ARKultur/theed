@@ -30,7 +30,7 @@
   "scripts": {
     "build": "webpack --mode=production --node-env=production",
     "build:dev": "webpack --mode=development --node-env=development",
-    "watch": "webpack --watch",
+    "watch": "webpack --watch --mode=development --node-env=development",
     "lint": "eslint .eslintrc.js"
   }
 }
