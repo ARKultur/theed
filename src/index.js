@@ -1,4 +1,7 @@
-import './style.css'
-import m from "mithril";
+import './style.css';
+import m from 'mithril';
 
-m.render(document.body, "hello world");
+import AppComponent from './components/App';
+
+
+m.mount(document.getElementById('app'), AppComponent);
