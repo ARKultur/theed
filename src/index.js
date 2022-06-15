@@ -1,7 +1,13 @@
 import './style.css';
 import m from 'mithril';
 
-import AppComponent from './components/App';
+import HomeView from './views/Home';
 
+m.route(
+    document.body,
+    '/', {
+      '/': HomeView,
+      // '/login': LoginView,
+    },
+);
 
-m.mount(document.getElementById('app'), AppComponent);
