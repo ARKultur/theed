@@ -1,3 +1,44 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+/* FONTS */
+
+.font-crimson-bold {
+    font-family: "Crimson Bold";
+    src: url("/public/fonts/crimsonpro-bold.ttf");
+}
+
+.font-creato-bold {
+    font-family: "Creato Bold";
+    src: url("/public/fonts/creato-bold.otf");
+}
+
+
+/* COLORS */
+
+.purple {
+    color: #8E38FF
+}
+
+.black {
+    color: #1E1E1E
+}
+
+/* COLOR OPACITY */
+
+.twenty {
+    opacity: 0.2
+}
+
+.fourty {
+    opacity: 0.4
+}
+
+.sixty {
+    opacity: 0.6
+}
+
+.eightty {
+    opacity: 0.8
+}

@@ -5,8 +5,6 @@ import SidebarLink from './SidebarLink';
 
 const SidebarComponent = {
   view: function(vnode) {
-    const companyName = 'ARKultur';
-
     return m(
         'div', {
           'class':
@@ -15,14 +13,17 @@ const SidebarComponent = {
         }, [
           m('div', {
             'class': 'flex items-center p-4',
-          }, `add img tag logo here`),
-          m('h1', {
-            'class': 'ml-2 font-medium tracking-wide uppercase',
-          }, companyName),
+          }, m('img', {
+            'class': 'w-18 h-18',
+            'alt': 'lockup logo',
+            'src': 'public/images/lockup.svg',
+          }),
+          ),
           m('div', {
-            'class': 'mt-2',
+            'class': 'mt-4 px-2',
           }, [
             m(SidebarLink, 'domains'),
+            m('div', {class: 'mt-4'}),
             m(SidebarLink, 'settings'),
           ],
           ),

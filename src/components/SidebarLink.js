@@ -6,21 +6,23 @@ const SidebarLink = {
     const linkName = vnode.children[0];
 
     return [m(
-        'router-link', {
+        m.route.Link, {
           'to': '/' + linkName,
-          'class': 'flex items-center px-4 py-2 tracking-wide' +
-                'text-gray-700 rounded-r-full outline-none' +
-                'cursor-pointer select-none g-green-200 text-gray-900 shadow',
+          'class': 'flex items-center text-center px-4 py-2 tracking-wide ' +
+                'rounded-lg bg-stone-100 ' +
+                'cursor-pointer select-none shadow ' +
+                'hover:bg-stone-200',
         },
-    ),
-    m('span', {
-      'class': 'ml-4',
-    }, linkName,
-    ),
-    m('span', {
-      'class': 'x-2 py-1 ml-auto text-xs font-medium leading-none' +
+        m('span', {
+          'class': 'ml-4 font-medium font-creato-bold ' +
+          'black eighty text-2xl capitalize',
+        }, linkName,
+        ),
+        m('span', {
+          'class': 'x-2 py-1 ml-auto text-xs font-medium leading-none' +
                 'bg-gray-300 rounded-full',
-    }),
+        }),
+    ),
     ];
   },
 };
