@@ -1,7 +1,7 @@
 import m from 'mithril';
 
-import SidebarLink from './SidebarLink';
-import SidebarDialog from './SidebarDialog';
+import SidebarLink from './Link';
+import SidebarDialog from './Dialog';
 
 
 const SidebarComponent = {

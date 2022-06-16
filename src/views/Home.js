@@ -1,6 +1,6 @@
 import m from 'mithril';
 
-import SidebarComponent from '../components/Sidebar';
+import SidebarComponent from '../components/Sidebar/index';
 
 
 const HomeView = {
