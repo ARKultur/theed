@@ -17,5 +17,6 @@ RUN yarn global add serve
 EXPOSE 3000
 
 COPY --from=builder /app/dist dist
+
 CMD ["serve", "-s" , "dist"]
 
