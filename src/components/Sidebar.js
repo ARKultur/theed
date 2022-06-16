@@ -1,6 +1,7 @@
 import m from 'mithril';
 
 import SidebarLink from './SidebarLink';
+import SidebarDialog from './SidebarDialog';
 
 
 const SidebarComponent = {
@@ -8,7 +9,7 @@ const SidebarComponent = {
     return m(
         'div', {
           'class':
-                'flex flex-col w-64 h-full pt-2 pr-2 ' +
+                'flex flex-col w-64 h-screen pt-2 pr-2 ' +
                 'bg-white border-r border-gray-300',
         }, [
           m('div', {
@@ -23,9 +24,11 @@ const SidebarComponent = {
             'class': 'mt-4 px-2',
           }, [
             m(SidebarLink, 'domains'),
-            m('div', {class: 'mt-4'}),
+            m('div', {'class': 'mt-4'}),
             m(SidebarLink, 'settings'),
-          ],
+          ]),
+          m('div', {'class': 'flex flex-col pb-4 flex-1 align-bottom'},
+              m(SidebarDialog, 'logout'),
           ),
         ],
     );
