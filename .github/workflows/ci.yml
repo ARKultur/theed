@@ -12,8 +12,8 @@ jobs:
       - name: install node modules
         run: yarn
 
-      - name: run eslint
-        run: eslint . --ext .js,.jsx,.ts,.tsx
+      - name: run linter
+        run: yarn lint
 
       - name: check if it builds
         run: yarn build
