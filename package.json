@@ -26,6 +26,7 @@
     "webpack-dev-server": "^4.9.0"
   },
   "dependencies": {
+    "@mithril-icons/feather": "^1.2.0",
     "mithril": "^2.2.0"
   },
   "scripts": {

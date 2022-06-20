@@ -1,6 +1,7 @@
 import m from 'mithril';
 
 import SidebarComponent from '../components/Sidebar/index';
+import MapboxComponent from '../components/Mapbox/index';
 
 
 const HomeView = {
@@ -10,11 +11,11 @@ const HomeView = {
     [
       m('div',
           {'class': 'col-span-1'},
-          m(SidebarComponent),
+          m(SidebarComponent, 'public/images/lockup.svg'),
       ),
       m('div',
           {'class': 'col-span-5'},
-          `Add Map here !`,
+          m(MapboxComponent),
       ),
     ],
     );
