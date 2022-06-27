@@ -1,4 +1,4 @@
-FROM node:18.2-alpine3.14 as builder
+FROM node:18.2-alpine3.15 as builder
 
 RUN mkdir -p /app
 WORKDIR /app
@@ -11,7 +11,7 @@ RUN yarn build
 
 
 
-FROM node:18.2-alpine3.14 as final
+FROM node:18.2-alpine3.15 as final
 
 RUN yarn global add serve
 EXPOSE 3000
