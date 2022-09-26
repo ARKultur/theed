@@ -1,7 +1,6 @@
-import m from 'mithril';
 import 'flowbite';
 
-import TopbarComponent from './components/Topbar';
+import TopbarComponent from './components/Bars/Topbar';
 
 const LandingView = {
     view: function (_vnode) {

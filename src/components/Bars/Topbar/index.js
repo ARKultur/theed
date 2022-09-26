@@ -1,7 +1,7 @@
 import m from 'mithril';
-import LoginButtonComponent from '../LoginButton';
-import MainLogoComponent from '../MainLogo';
-import MobileMenuButtonComponent from '../MobileMenuButton';
+import LoginButtonComponent from '../Buttons/LoginButton';
+import MainLogoComponent from '../Logos/MainLogo';
+import MobileMenuButtonComponent from '../Buttons/MobileMenuButton';
 
 const TopbarComponent = {
     view: function (_vnode) {

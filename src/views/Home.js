@@ -1,6 +1,6 @@
 import m from 'mithril';
 
-import SidebarComponent from '../components/Sidebar/index';
+import SidebarComponent from '../components/Bars/Sidebar/index';
 import MapboxComponent from '../components/Mapbox/index';
 
 
