@@ -6,9 +6,9 @@ import HomeView from './views/Home';
 m.route(
     document.body,
     '/', {
-      '/': LandingView,
-      '/home': HomeView,
-      // '/login': LoginView,
-    },
+    '/': LandingView,
+    '/home': HomeView,
+    // '/login': LoginView,
+},
 );
 

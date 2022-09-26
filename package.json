@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@mithril-icons/feather": "^1.2.0",
+    "flowbite": "^1.5.3",
     "mapbox-gl": "^2.9.0",
     "mithril": "^2.2.0"
   },
