@@ -37,38 +37,41 @@ const TopbarMenu = {
         return m('div', {
             'class': 'items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1',
         },
-            [
+            m('ul', {
+                'class': 'flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0',
+            }, [
                 m(TopbarMenuComponent, {
                     current: true,
-                    route: '#',
+                    route: '/',
                     text: 'Home'
                 }),
                 m(TopbarMenuComponent, {
                     current: false,
-                    route: '#',
+                    route: '/',
                     text: 'Our project',
                 }),
                 m(TopbarMenuComponent, {
                     current: false,
-                    route: '#',
+                    route: '/',
                     text: 'Features',
                 }),
                 m(TopbarMenuComponent, {
                     current: false,
-                    route: '#',
+                    route: '/',
                     text: 'Our team',
                 }),
                 m(TopbarMenuComponent, {
                     current: false,
-                    route: '#',
+                    route: '/',
                     text: 'Pricing',
                 }),
                 m(TopbarMenuComponent, {
                     current: false,
-                    route: '#',
+                    route: '/',
                     text: 'Contact us',
                 }),
             ]
+            )
         )
     }
 };
