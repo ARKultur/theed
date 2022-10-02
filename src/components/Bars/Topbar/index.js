@@ -95,7 +95,7 @@ const TopbarComponent = {
                         }, [
                             m(LoginButtonComponent, {
                                 text: 'Log in',
-                                href: '/login'
+                                href: '#'
                             })
                         ]),
                         m(MobileMenuButtonComponent),
