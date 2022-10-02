@@ -1,6 +1,6 @@
 {
   "name": "theed",
-  "version": "2.0.0",
+  "version": "0.3.0",
   "main": "index.js",
   "repository": "git@github.com:ARKultur/theed.git",
   "author": "winds0r <contact@creative-rift.com>",
@@ -26,12 +26,16 @@
     "webpack-dev-server": "^4.9.0"
   },
   "dependencies": {
+    "@mithril-icons/feather": "^1.2.0",
+    "flowbite": "^1.5.3",
+    "mapbox-gl": "^2.9.0",
     "mithril": "^2.2.0"
   },
   "scripts": {
     "build": "webpack --mode=production --node-env=production",
     "build:dev": "webpack --mode=development --node-env=development",
     "watch": "webpack --watch --mode=development --node-env=development",
-    "lint": "eslint .eslintrc.js"
+    "lint": "eslint .eslintrc.js",
+    "lint:fix": "lint --fix"
   }
 }
