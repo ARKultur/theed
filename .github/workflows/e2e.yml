@@ -3,16 +3,42 @@ name: run e2e tests
 on: [push]
 
 jobs:
-  run-e2e:
+  cypress-run:
     runs-on: ubuntu-latest
+    env:
+      working-directory: front
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: run cypress tests
-        uses: cypress-io/github-action@v4
+      - name: Install node
+        uses: actions/setup-node@v3
         with:
+          node:version: '18.7.0'
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+        working-directory: ${{env.working-directory}}
+
+      - name: Cache node_modules
+        uses: actions/cache@v2.1.7
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: yarn-${{ hashFiles('front/yarn.lock') }}
+          restore-keys: |
+            yarn-
+
+      - name: Install dependencies
+        working-directory: ${{env.working-directory}}
+        run: yarn
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          working-directory: ${{env.working-directory}}
+          build: yarn build
+          start: yarn run
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
-
-          browser: chrome
