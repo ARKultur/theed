@@ -17,13 +17,11 @@ jobs:
           node:version: '18.7.0'
 
       - name: Install dependencies
-        working-directory: ${{env.working-directory}}
         run: yarn
 
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          working-directory: ${{env.working-directory}}
           build: yarn build
           start: yarn run
           wait-on: 'http://localhost:3000'
