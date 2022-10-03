@@ -12,10 +12,11 @@ jobs:
       - name: run cypress tests
         uses: cypress-io/github-action@v4
         with:
-          # Disable running of tests within install job
+          install-command: yarn --frozen-lockfile --silent
+          build: yarn build
+
           start: yarn run
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
 
-          build: yarn build
           browser: chrome
