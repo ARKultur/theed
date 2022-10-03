@@ -1,5 +1,10 @@
 describe('Should test dashboard', () => {
     it('should display landing page components', function () {
+
+        cy.on('uncaught:exception', (_err, _runnable) => {
+            return false
+        })
+
         cy.visit('http://localhost:3000');
         cy.contains('ARKutlur');
 
