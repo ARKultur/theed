@@ -1,6 +1,6 @@
 {
   "name": "theed",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "main": "index.js",
   "repository": "git@github.com:ARKultur/theed.git",
   "author": "winds0r <contact@creative-rift.com>",
@@ -13,12 +13,15 @@
     "babel-loader": "^8.2.5",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
+    "cypress": "^10.9.0",
     "eslint": ">=5.16.0",
     "eslint-config-google": "^0.14.0",
     "html-webpack-plugin": "^5.5.0",
     "postcss": "^8.4.14",
     "postcss-loader": "^7.0.0",
     "postcss-preset-env": "^7.6.0",
+    "serve": "^14.0.1",
+    "start-server-and-test": "^1.14.0",
     "style-loader": "^3.3.1",
     "tailwindcss": "^3.0.24",
     "webpack": "^5.72.1",
@@ -36,6 +39,10 @@
     "build:dev": "webpack --mode=development --node-env=development",
     "watch": "webpack --watch --mode=development --node-env=development",
     "lint": "eslint .eslintrc.js",
-    "lint:fix": "lint --fix"
+    "lint:fix": "lint --fix",
+    "start": "serve -l 3000 -s dist",
+    "e2e": "start-server-and-test start http://localhost:3000 cy:run",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open"
   }
 }
