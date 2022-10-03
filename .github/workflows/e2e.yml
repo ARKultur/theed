@@ -16,20 +16,6 @@ jobs:
         with:
           node:version: '18.7.0'
 
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-        working-directory: ${{env.working-directory}}
-
-      - name: Cache node_modules
-        uses: actions/cache@v2.1.7
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: yarn-${{ hashFiles('front/yarn.lock') }}
-          restore-keys: |
-            yarn-
-
       - name: Install dependencies
         working-directory: ${{env.working-directory}}
         run: yarn
