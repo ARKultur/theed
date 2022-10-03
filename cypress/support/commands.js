@@ -1,4 +1,4 @@
-import {requestBaseApi} from '../../integration/helpers';
+import {requestBaseApi} from './helpers';
 
 // ***********************************************
 // This example commands.js shows you how to
