@@ -15,6 +15,9 @@ jobs:
       - name: run linter
         run: yarn lint
 
+      - name: run e2e testing
+        run: yarn cy:run
+
       - name: check if it builds
         run: yarn build
 
