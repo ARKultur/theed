@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 const path = require('path');
+const webpack = require('webpack');
 const isProduction = true;
 
 const stylesHandler = 'style-loader';
@@ -15,6 +16,10 @@ const config = {
         clean: true,
     },
     plugins: [
+        new webpack.DefinePlugin({
+            PROD: JSON.stringify(!process.env.NODE_ENV || process.env.NODE_ENV === 'production'),
+            HOST: JSON.stringify(process.env.HOSTNAME || 'https://arkultur.creative-rift.com')
+          }),
         new HtmlWebpackPlugin({
             template: 'index.html',
         }),

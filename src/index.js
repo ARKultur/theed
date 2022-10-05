@@ -5,6 +5,8 @@ import HomeView from './views/Home';
 import LandingView from './views/LandingView';
 import LoginView from './views/LoginView';
 
+m.route.prefix ="";
+
 m.route(
     document.body,
     '/', {
@@ -13,4 +15,5 @@ m.route(
     '/login': LoginView,
 },
 );
+
 

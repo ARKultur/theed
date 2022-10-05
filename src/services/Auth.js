@@ -6,7 +6,8 @@ class Authentication {
     get() {
         return localStorage.getItem('theedJwt');
     }
-    post(email, password) {
+    post(ev, email, password) {
+        ev.preventDefault(); //don't touch that
         return m.request({
             method: 'POST',
             url: API_URL + '/login',
@@ -17,9 +18,11 @@ class Authentication {
         })
             .then(function (response) {
                 localStorage.setItem('theedJwt', response.data.jwt);
+                return true;
             })
             .catch(function (err) {
                 console.log('Login error: ' + JSON.stringify(err));
+                return false;
             });
     }
 
