@@ -1,14 +1,26 @@
-name: docker
+name: Docker
 
 on:
   push:
     branches:
       - "canon"
+      - "next"
+    workflow_dispatch:
+
+  pull_request:
+    branches:
+      - "canon"
+      - "next"
+    workflow_dispatch:
+
+env:
+  APP_VERSION: 0.4.0
 
 jobs:
   push:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+
     steps:
       - uses: actions/checkout@v3
 
@@ -19,21 +31,30 @@ jobs:
       - run: npm install
 
       - name: Log in to DockerHub
-        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+        uses: docker/login-action@v2
         with:
           username: ${{ secrets.LOGIN_DOCKERHUB_TEST }}
           password: ${{ secrets.PASSWORD_DOCKERHUB_TEST }}
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
-        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+        uses: docker/metadata-action@v4
         with:
           images: bogdzn/theed
 
-      - name: Build and push Docker image
-        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+      - name: Build and push canon Docker image
+        if: github.ref == 'refs/heads/canon' && github.event_name != 'pull_request'
+        uses: docker/build-push-action@v3
         with:
           context: .
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: bogdzn/theed:canon, bogdzn/theed:${{ env.APP_VERSION }}
+          labels: ${{ steps.meta.outputs.labels }}
+      - name: Build and push dev docker image
+        if: github.ref == 'refs/heads/next' && github.event_name != 'pull_request'
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: true
+          tags: bogdzn/theed:${{ env.APP_VERSION }}-dev, bogdzn/theed:dev
           labels: ${{ steps.meta.outputs.labels }}
