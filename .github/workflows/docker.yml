@@ -51,7 +51,7 @@ jobs:
           tags: bogdzn/theed:canon, bogdzn/theed:${{ env.APP_VERSION }}
           labels: ${{ steps.meta.outputs.labels }}
       - name: Build and push dev docker image
-        if: github.ref == 'refs/heads/next' && github.event_name != 'pull_request'
+        if: github.ref == 'refs/heads/dev' && github.event_name != 'pull_request'
         uses: docker/build-push-action@v3
         with:
           context: .
