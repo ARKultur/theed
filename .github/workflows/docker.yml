@@ -4,13 +4,13 @@ on:
   push:
     branches:
       - "canon"
-      - "next"
+      - "dev"
     workflow_dispatch:
 
   pull_request:
     branches:
       - "canon"
-      - "next"
+      - "dev"
     workflow_dispatch:
 
 env:
