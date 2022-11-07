@@ -4,6 +4,7 @@ import m from 'mithril';
 import HomeView from './views/Home';
 import LandingView from './views/LandingView';
 import LoginView from './views/LoginView';
+import RegisterView from './views/RegisterView';
 
 m.route.prefix ="";
 
@@ -13,6 +14,7 @@ m.route(
     '/': LandingView,
     '/home': HomeView,
     '/login': LoginView,
+    '/register': RegisterView
 },
 );
 
