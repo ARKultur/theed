@@ -13,7 +13,7 @@ class Authentication {
         ev.preventDefault(); //don't touch that
         return m.request({
             method: "POST",
-            url: 'https://localhost/api/account',
+            url: API_URL + '/account',
             body: {
                 account: {
                     password: password,
