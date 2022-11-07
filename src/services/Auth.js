@@ -13,7 +13,7 @@ class Authentication {
         ev.preventDefault(); //don't touch that
         return m.request({
             method: "POST",
-            url: API_URL + '/account',
+            url: 'https://localhost/api/account',
             body: {
                 account: {
                     password: password,
@@ -23,17 +23,17 @@ class Authentication {
                 }
             },
         })
-          .then(function (response) {
-              response.isValid = true;
-              return response;
-          })
-          .catch(function (err) {
-              response.isValid = false;
-              response.code = err.code;
-              response.body = err.response.errors;
-              console.log('Login error: ' + JSON.stringify(err));
-              return response;
-          });
+            .then(function (response) {
+                response.isValid = true;
+                return response;
+            })
+            .catch(function (err) {
+                response.isValid = false;
+                response.code = err.code;
+                response.body = err.response.errors;
+                console.log('Login error: ' + JSON.stringify(err));
+                return response;
+            });
     }
 
     get() {

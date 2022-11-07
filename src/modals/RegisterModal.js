@@ -20,11 +20,11 @@ const ModalCloseButtonComponent = {
         m('.flex.justify-end.mb-6', [
             m('button',
                 {
-                onclick() { m.route.set('/') },
+                    onclick() { m.route.set('/') },
                 },
                 m('span.mr-2', "Close"),
                 m('span.i.fa.fa-times'))
-            ])
+        ])
 }
 
 
@@ -118,33 +118,33 @@ const RegisterFormComponent = {
                            dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800\','
                 }, "Sign in")
             )
-            ])
+        ])
     }
 }
 
 const CriticAlert = {
     view: function (_vnode) {
         return m("div", {
-            "class": "mb-6",
-            "role": "alert",
-        }, [
-          m("div", {
-              "class": "bg-red-500 text-white font-bold rounded-t px-4 py-2"
-          }, "Error"),
-          m("div", {
-              "class": "border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700"
-          }, [
-              authResponse.code !== 403 ? "An error has occurred. Please try again." :
-              authResponse.body.map(function (error) {
-                  return m("div", [
-                      m("p", {
-                          "class": "font-bold"
-                      }, error.field.charAt(0).toUpperCase() + error.field.slice(1) + ":"),
-                      m("p", error.detail.charAt(0).toUpperCase() + error.detail.slice(1))
-                  ])
-              }),
-          ]),
-          ]
+                "class": "mb-6",
+                "role": "alert",
+            }, [
+                m("div", {
+                    "class": "bg-red-500 text-white font-bold rounded-t px-4 py-2"
+                }, "Error"),
+                m("div", {
+                    "class": "border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700"
+                }, [
+                    authResponse.code !== 403 ? "An error has occurred. Please try again." :
+                        authResponse.body.map(function (error) {
+                            return m("div", [
+                                m("p", {
+                                    "class": "font-bold"
+                                }, error.field.charAt(0).toUpperCase() + error.field.slice(1) + ":"),
+                                m("p", error.detail.charAt(0).toUpperCase() + error.detail.slice(1))
+                            ])
+                        }),
+                ]),
+            ]
         )
 
     }
@@ -153,16 +153,16 @@ const CriticAlert = {
 const PassAlert = {
     view: function (_vnode) {
         return m("div", {
-              "class": "mb-6",
-              "role": "alert",
-          }, [
-              m("div", {
-                  "class": "bg-red-500 text-white font-bold rounded-t px-4 py-2"
-              }, "Information Error"),
-              m("div", {
-                  "class": "border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700"
-              }, "Passwords does not match!"),
-          ]
+                "class": "mb-6",
+                "role": "alert",
+            }, [
+                m("div", {
+                    "class": "bg-red-500 text-white font-bold rounded-t px-4 py-2"
+                }, "Information Error"),
+                m("div", {
+                    "class": "border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700"
+                }, "Passwords does not match!"),
+            ]
         )
 
     }
@@ -184,14 +184,14 @@ const RegisterModalComponent = {
                 authResponse.isValid ? null : m(CriticAlert),
                 wrong_pass ? m(PassAlert) : null,
                 m('div', {
-                      'class': 'shadow-lg bg-white rounded-lg p-8',
-                  }, [
-                      m(ModalCloseButtonComponent),
-                      m('h1', {
-                          'class': 'text-center text-2xl text-purple-dark',
-                      }, "New account"),
-                      m(RegisterFormComponent),
-                  ])
+                    'class': 'shadow-lg bg-white rounded-lg p-8',
+                }, [
+                    m(ModalCloseButtonComponent),
+                    m('h1', {
+                        'class': 'text-center text-2xl text-purple-dark',
+                    }, "New account"),
+                    m(RegisterFormComponent),
+                ])
             ])
         ]);
     }
