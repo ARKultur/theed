@@ -17,8 +17,8 @@ const config = {
     },
     plugins: [
         new webpack.DefinePlugin({
-            PROD: JSON.stringify(!process.env.NODE_ENV || process.env.NODE_ENV === 'production'),
-            HOST: JSON.stringify(process.env.HOSTNAME || 'https://arkultur.creative-rift.com')
+            //PROD: JSON.stringify(!process.env.NODE_ENV || process.env.NODE_ENV === 'production'),
+            //HOST: JSON.stringify(/*process.env.HOSTNAME || 'https://arkultur.creative-rift.com'*/'https://arktest.creative-rift.com')
           }),
         new HtmlWebpackPlugin({
             template: 'index.html',
