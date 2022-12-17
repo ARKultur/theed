@@ -7,6 +7,7 @@ import LoginView from './views/LoginView';
 import RegisterView from './views/RegisterView';
 import NotFoundView from "./views/NotFound";
 import MaintenanceView from "./views/Maintenance";
+import TeamView from "./views/TeamView";
 
 m.route.prefix ="";
 
@@ -19,6 +20,7 @@ m.route(
     '/login': LoginView,
     '/register': RegisterView,
     '/maintenance': MaintenanceView,
+    '/team': TeamView,
     '/:404': NotFoundView
 },
 );

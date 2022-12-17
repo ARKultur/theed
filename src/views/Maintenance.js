@@ -22,8 +22,7 @@ const MaintenanceView = {
                                     ' tracking-tight md:text-5xl xl:text-6xl dark:text-white'
                             }, "Maintenance"),
                             m('p', {
-                                'class': 'max-w-2xl mb-6 font-light text-gray-500 lg:mb-8' +
-                                    ' md:text-lg lg:text-xl dark:text-gray-400'
+                                'class': 'max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400'
                             }, "This page is currently in maintenance. Sorry for the inconvenience."),
                             m('div', {
                                 'class': 'space-y-4 sm:flex sm:space-y-0 sm:space-x-4',

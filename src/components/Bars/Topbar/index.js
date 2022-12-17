@@ -56,7 +56,7 @@ const TopbarMenu = {
                 }),
                 m(TopbarMenuComponent, {
                     current: false,
-                    route: '/maintenance',
+                    route: '/team',
                     text: 'Our team',
                 }),
                 m(TopbarMenuComponent, {
