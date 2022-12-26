@@ -17,10 +17,27 @@ function Map() {
              });
             map.on('load', function () {
                 map.resize();
+                if (localStorage.hasOwnProperty("points")) {
+                    let points = JSON.parse(localStorage.getItem("points"));
+                    for (let i = 0; i < points.length; i++)
+                        new mapboxgl.Marker().setLngLat(points[i]).addTo(map);
+                }
             });
 
             map.on('dblclick', (e) => {
-                new mapboxgl.Marker().setLngLat(e.lngLat.wrap()).addTo(map);
+                var points = [];
+                if (localStorage.hasOwnProperty("points")) {
+                    points = JSON.parse(localStorage.getItem("points"));
+                    points.push(e.lngLat.wrap());
+                    new mapboxgl.Marker().setLngLat(e.lngLat.wrap()).addTo(map);
+                    localStorage.setItem("points",  JSON.stringify(points));
+                    console.log("added");
+                } else {
+                    points.push(e.lngLat.wrap());
+                    new mapboxgl.Marker().setLngLat(e.lngLat.wrap()).addTo(map);
+                    localStorage.setItem("points",  JSON.stringify(points));
+                    console.log("created");
+                }            
             })
         },
         onremove: function() {
