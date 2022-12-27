@@ -8,7 +8,7 @@ const FeatureElement = {
         const imageRight = vnode.attrs.imageRight ? 'flex-row-reverse' : 'flex-row';
 
         return m('div', {
-                'class': `flex ${imageRight}`
+                'class': `flex ${imageRight} mb-4`
             }, [
                 m('img', {
                     'class': 'inline-block h-52 w-52 rounded-full mx-4 mt-5',
@@ -22,7 +22,7 @@ const FeatureElement = {
                     'class': 'items-center max-w-2xl mb-6 text-4xl font-extrabold leading-none  tracking-tight md:text-5xl xl:text-3xl dark:text-white'
                 }, vnode.attrs.title),
                 m('p', {
-                    'class': 'max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400'
+                    'class': 'max-w-2xl pt-4 mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400'
                 }, `${vnode.attrs.text}`)
                 ]
             )
@@ -75,32 +75,32 @@ const FeatureView = {
                             m(FeatureElement, {
                                 imageLink : 'https://cdn.discordapp.com/avatars/206021742932656129/6ddb90cdbd2028c418089d18a6e6521b.webp?size=256',
                                 alt: 'A feature',
-                                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet orci augue, ut gravida ex luctus quis. Curabitur ac sagittis enim. Maecenas tincidunt eros ipsum, ut sagittis elit cursus sagittis. Nunc tincidunt enim nec tortor faucibus maximus. Duis vel lectus blandit leo commodo auctor at et libero. Curabitur facilisis felis eros, id imperdiet sapien commodo et. Ut egestas arcu at ligula pharetra varius. Morbi eget ante eget erat commodo rutrum ac eu purus. Aenean dui mi, scelerisque nec viverra eget, pretium vitae nunc.',
+                                text: 'Arkultur offers a interactive map that allow you to see all cultural places around you. With this map feel free to (re)discover your city!',
                                 imageRight: false,
                                 title: 'Interactive Map'
                             }),
                             m(FeatureElement, {
                                 imageLink : 'https://cdn.discordapp.com/avatars/206021742932656129/6ddb90cdbd2028c418089d18a6e6521b.webp?size=256',
                                 alt: 'A feature',
-                                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet orci augue, ut gravida ex luctus quis. Curabitur ac sagittis enim. Maecenas tincidunt eros ipsum, ut sagittis elit cursus sagittis. Nunc tincidunt enim nec tortor faucibus maximus. Duis vel lectus blandit leo commodo auctor at et libero. Curabitur facilisis felis eros, id imperdiet sapien commodo et. Ut egestas arcu at ligula pharetra varius. Morbi eget ante eget erat commodo rutrum ac eu purus. Aenean dui mi, scelerisque nec viverra eget, pretium vitae nunc.',
+                                text: 'Augmented Reality is a very good technology to travel in the past. Look through your phone to see how the place was be in the past!',
                                 imageRight: true,
                                 title: 'Augmented Reality'
                             }),
                             m(FeatureElement, {
                                 imageLink : 'https://cdn.discordapp.com/avatars/206021742932656129/6ddb90cdbd2028c418089d18a6e6521b.webp?size=256',
                                 alt: 'A feature',
-                                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet orci augue, ut gravida ex luctus quis. Curabitur ac sagittis enim. Maecenas tincidunt eros ipsum, ut sagittis elit cursus sagittis. Nunc tincidunt enim nec tortor faucibus maximus. Duis vel lectus blandit leo commodo auctor at et libero. Curabitur facilisis felis eros, id imperdiet sapien commodo et. Ut egestas arcu at ligula pharetra varius. Morbi eget ante eget erat commodo rutrum ac eu purus. Aenean dui mi, scelerisque nec viverra eget, pretium vitae nunc.',
+                                text: 'A complete management of your profile allow you to see only what you want to do.',
                                 imageRight: false,
                                 title: 'Profile'
                             }),
                             m('h1', {
                                 'id': 'dashboardSection',
-                                'class': 'items-center max-w-2xl mb-4 text-4xl font-extrabold leading-none  tracking-tight md:text-5xl xl:text-6xl dark:text-white'
+                                'class': 'items-center max-w-2xl mb-6 pt-3 text-4xl font-extrabold leading-none  tracking-tight md:text-5xl xl:text-6xl dark:text-white'
                             }, "Dashboard"),
                             m(FeatureElement, {
                                 imageLink : 'public/images/MapBox.png',
                                 alt: 'A feature',
-                                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet orci augue, ut gravida ex luctus quis. Curabitur ac sagittis enim. Maecenas tincidunt eros ipsum, ut sagittis elit cursus sagittis. Nunc tincidunt enim nec tortor faucibus maximus. Duis vel lectus blandit leo commodo auctor at et libero. Curabitur facilisis felis eros, id imperdiet sapien commodo et. Ut egestas arcu at ligula pharetra varius. Morbi eget ante eget erat commodo rutrum ac eu purus. Aenean dui mi, scelerisque nec viverra eget, pretium vitae nunc.',
+                                text: 'Arkultur offers you an interactive map that facilitates the management of your cultural places.',
                                 imageRight: false,
                                 title: 'Interactive Map'
                             }),
