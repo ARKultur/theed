@@ -5,6 +5,8 @@ import HomeView from './views/Home';
 import LandingView from './views/LandingView';
 import LoginView from './views/LoginView';
 import MapBoxView from './views/MapBoxView';
+import AddNodeView from './views/AddNodeView';
+import DelNodeView from './views/DelNodeView';
 
 m.route.prefix ="";
 
@@ -15,6 +17,8 @@ m.route(
     '/home': HomeView,
     '/login': LoginView,
     '/mapbox': MapBoxView,
+    '/add_nodes': AddNodeView,
+    '/del_nodes': DelNodeView
 },
 );
 
