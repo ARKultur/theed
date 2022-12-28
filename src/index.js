@@ -4,11 +4,16 @@ import m from 'mithril';
 import HomeView from './views/Home';
 import LandingView from './views/LandingView';
 import LoginView from './views/LoginView';
+import MapBoxView from './views/MapBoxView';
+import AddNodeView from './views/AddNodeView';
+import DelNodeView from './views/DelNodeView';
+
+m.route.prefix ="";
 import RegisterView from './views/RegisterView';
+import FeatureView from "./views/FeatureView";
 import NotFoundView from "./views/NotFound";
 import MaintenanceView from "./views/Maintenance";
 import TeamView from "./views/TeamView";
-import FeatureView from "./views/FeatureView";
 
 m.route.prefix ="";
 
@@ -23,6 +28,9 @@ m.route(
     '/maintenance': MaintenanceView,
     '/team': TeamView,
     '/features': FeatureView,
+    '/mapbox': MapBoxView,
+    '/add_nodes': AddNodeView,
+    '/del_nodes': DelNodeView,
     '/:404': NotFoundView
 },
 );

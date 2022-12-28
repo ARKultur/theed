@@ -1,22 +1,15 @@
-FROM node:18.7-alpine3.16 as builder
+FROM node:18.7-alpine3.16
 
 RUN mkdir -p /app
 WORKDIR /app
 
 COPY package.json .
-RUN yarn install
+RUN npm install
 
 COPY . .
-RUN yarn build
+RUN npm run build
 
-
-
-FROM node:18.7-alpine3.16 as final
-
-RUN yarn global add serve
 EXPOSE 3000
 
-COPY --from=builder /app/dist dist
-
-CMD ["serve", "-s" , "dist"]
+CMD ["npm", "run","start"]
 
