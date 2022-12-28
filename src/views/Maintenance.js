@@ -5,6 +5,7 @@ import HomePageButton from "../components/Buttons/HomePageButton";
 
 const MaintenanceView = {
     view: function (_vnode) {
+        document.title = "ARKultur - Maintenace";
         return m('root', [
             m(TopbarComponent),
             m('section', {

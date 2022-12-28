@@ -4,6 +4,7 @@ import FooterComponent from "../components/FooterComponent";
 
 const ProjectView = {
     view: function (_vnode) {
+        document.title = "ARKultur - Project";
         return m('root', [
             m(TopbarComponent),
             m('section', {
