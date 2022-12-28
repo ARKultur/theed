@@ -6,9 +6,9 @@ import MainLogoComponent from '../../Logos/MainLogo';
 
 const TopbarMenuComponent = {
     view: function (vnode) {
-        const isCurrent = vnode.attrs.current || false;
         const route = vnode.attrs.route;
         const text = vnode.attrs.text;
+        const isCurrent = m.route.get() === route && route !== '/maintenance';
 
         const settings = (isCurrent) ? {
             'class': 'block py-2 pl-3 pr-4 text-white bg-purple-700' +
@@ -40,32 +40,26 @@ const TopbarMenu = {
                 'class': 'flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0',
             }, [
                 m(TopbarMenuComponent, {
-                    current: true,
                     route: '/',
                     text: 'Home'
                 }),
                 m(TopbarMenuComponent, {
-                    current: false,
                     route: '/project',
                     text: 'Our project',
                 }),
                 m(TopbarMenuComponent, {
-                    current: false,
                     route: '/maintenance',
                     text: 'Features',
                 }),
                 m(TopbarMenuComponent, {
-                    current: false,
                     route: '/team',
                     text: 'Our team',
                 }),
                 m(TopbarMenuComponent, {
-                    current: false,
                     route: '/maintenance',
                     text: 'Pricing',
                 }),
                 m(TopbarMenuComponent, {
-                    current: false,
                     route: '/maintenance',
                     text: 'Contact us',
                 }),
