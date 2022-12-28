@@ -24,6 +24,7 @@ const Member = {
 
 const TeamView = {
     view: function (_vnode) {
+        document.title = "ARKultur - Our Team";
         return m('root', [
             m(TopbarComponent),
             m('section', {
