@@ -8,6 +8,7 @@ import RegisterView from './views/RegisterView';
 import NotFoundView from "./views/NotFound";
 import MaintenanceView from "./views/Maintenance";
 import TeamView from "./views/TeamView";
+import ProjectView from "./views/ProjectView";
 
 m.route.prefix ="";
 
@@ -21,6 +22,7 @@ m.route(
     '/register': RegisterView,
     '/maintenance': MaintenanceView,
     '/team': TeamView,
+    '/project': ProjectView,
     '/:404': NotFoundView
 },
 );
