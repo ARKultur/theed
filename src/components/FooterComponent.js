@@ -9,11 +9,13 @@ const FooterComponent = {
             children: [
                 {
                     name: 'About',
-                    route: '/',
+                    route: '/maintenance',
+                    newPage: false,
                 },
                 {
                     name: 'Blog',
-                    route: '/',
+                    route: '/maintenance',
+                    newPage: false,
                 }
             ]
         };
@@ -23,15 +25,18 @@ const FooterComponent = {
             children: [
                 {
                     name: 'Discord Server',
-                    route: '/',
+                    route: '/maintenance',
+                    newPage: false,
                 },
                 {
                     name: 'Github Organisation',
-                    route: '/',
+                    route: 'https://github.com/ARKultur',
+                    newPage: true,
                 },
                 {
                     name: 'Contact us',
-                    route: '/',
+                    route: '/maintenance',
+                    newPage: false,
                 }
             ]
         };
@@ -41,15 +46,18 @@ const FooterComponent = {
             children: [
                 {
                     name: 'Privacy Policy',
-                    route: '/',
+                    route: '/maintenance',
+                    newPage: false,
                 },
                 {
                     name: 'Licensing',
-                    route: '/',
+                    route: '/maintenance',
+                    newPage: false,
                 },
                 {
                     name: 'Terms',
-                    route: '/',
+                    route: '/maintenance',
+                    newPage: false,
                 }
             ]
         };
@@ -59,19 +67,23 @@ const FooterComponent = {
             children: [
                 {
                     name: 'Naboo',
-                    route: '/',
+                    route: 'https://github.com/ARKultur/naboo',
+                    newPage: true,
                 },
                 {
                     name: 'Theed',
-                    route: '/',
+                    route: 'https://github.com/ARKultur/theed',
+                    newPage: true,
                 },
                 {
                     name: 'Sentinel',
-                    route: '/',
+                    route: 'https://github.com/ARKultur/sentinel',
+                    newPage: true,
                 },
                 {
                     name: 'Arkham',
-                    route: '/',
+                    route: 'https://github.com/ARKultur/arkham',
+                    newPage: true,
                 }
             ]
         };
@@ -81,11 +93,13 @@ const FooterComponent = {
             children: [
                 {
                     name: 'Android',
-                    route: '/',
+                    route: '/maintenance',
+                    newPage: false,
                 },
                 {
                     name: 'iOS',
-                    route: '/',
+                    route: '/maintenance',
+                    newPage: false,
                 }
             ]
         }
@@ -115,7 +129,7 @@ const FooterComponent = {
                 }, [
                     m('a', {
                         'class': 'flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white',
-                        'href': '#',
+                        'href': '/',
                     }, [
                         m('img', {
                             'src': 'public/images/logo.svg',

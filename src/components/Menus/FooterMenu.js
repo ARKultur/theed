@@ -8,6 +8,7 @@ const FooterSubMenuComponent = {
         }, m('a', {
             'href': `${vnode.attrs.route}`,
             'class': 'hover:underline',
+            'target': `${vnode.attrs.newPage ? '_blank' : ''}`,
         }, vnode.attrs.name))
     }
 }
@@ -29,6 +30,7 @@ const FooterMenuComponent = {
                     return m(FooterSubMenuComponent, {
                         name: sub.name,
                         route: sub.route,
+                        newPage: sub.newPage,
                     })
                 })
             )

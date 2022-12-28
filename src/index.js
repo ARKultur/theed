@@ -9,6 +9,13 @@ import AddNodeView from './views/AddNodeView';
 import DelNodeView from './views/DelNodeView';
 
 m.route.prefix ="";
+import RegisterView from './views/RegisterView';
+import NotFoundView from "./views/NotFound";
+import MaintenanceView from "./views/Maintenance";
+import TeamView from "./views/TeamView";
+
+m.route.prefix ="";
+
 
 m.route(
     document.body,
@@ -18,7 +25,11 @@ m.route(
     '/login': LoginView,
     '/mapbox': MapBoxView,
     '/add_nodes': AddNodeView,
-    '/del_nodes': DelNodeView
+    '/del_nodes': DelNodeView,
+    '/register': RegisterView,
+    '/maintenance': MaintenanceView,
+    '/team': TeamView,
+    '/:404': NotFoundView
 },
 );
 

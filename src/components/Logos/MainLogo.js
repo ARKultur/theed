@@ -4,7 +4,7 @@ const MainLogoComponent = {
     view: function (_vnode) {
         return m('a', {
             'class': 'flex items-center',
-            'href': '#'
+            'href': '/'
         },
             [
                 m('img', {
