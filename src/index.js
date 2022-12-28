@@ -10,6 +10,7 @@ import DelNodeView from './views/DelNodeView';
 
 m.route.prefix ="";
 import RegisterView from './views/RegisterView';
+import FeatureView from "./views/FeatureView";
 import NotFoundView from "./views/NotFound";
 import MaintenanceView from "./views/Maintenance";
 import TeamView from "./views/TeamView";
@@ -24,12 +25,13 @@ m.route(
     '/': LandingView,
     '/home': HomeView,
     '/login': LoginView,
-    '/mapbox': MapBoxView,
-    '/add_nodes': AddNodeView,
-    '/del_nodes': DelNodeView,
     '/register': RegisterView,
     '/maintenance': MaintenanceView,
     '/team': TeamView,
+    '/features': FeatureView,
+    '/mapbox': MapBoxView,
+    '/add_nodes': AddNodeView,
+    '/del_nodes': DelNodeView,
     '/project': ProjectView,
     '/:404': NotFoundView
 },

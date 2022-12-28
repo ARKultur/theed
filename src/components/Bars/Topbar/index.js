@@ -48,7 +48,7 @@ const TopbarMenu = {
                     text: 'Our project',
                 }),
                 m(TopbarMenuComponent, {
-                    route: '/maintenance',
+                    route: '/features',
                     text: 'Features',
                 }),
                 m(TopbarMenuComponent, {
