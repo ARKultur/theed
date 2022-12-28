@@ -14,7 +14,6 @@ const ModalCloseButtonComponent = {
     ]),
 };
 
-
 const LoginFormComponent = {
         
     view: function (_vnode) {
