@@ -21,5 +21,6 @@ o.spec("MyComponent", function() {
         out.should.have('span.mr-2')
         out.should.contain('Close');
         out.should.not.contain('Open')
+        out.should.contain('qsdqsdqsdqsd')
     })
 })
