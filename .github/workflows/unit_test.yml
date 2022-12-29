@@ -16,7 +16,7 @@ jobs:
         run: npm run lint
 
       - name: run tests
-        run: npm run test
+        run: npm run test && echo $?
       
       - name: Fail if exit code is not 0
         run: echo "Exit code was ${{ steps.script.outputs.exitCode }}"
