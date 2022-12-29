@@ -12,12 +12,6 @@ jobs:
       - name: install node modules
         run: npm install
 
-      - name: nuke the ospec error
-        run: rm -rf node_modules/mithril/ospec
-
-      - name: install the real ospec
-        run: npm install ospec
-        
       - name: run tests
         run: npm run test && echo $?
       
