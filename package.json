@@ -42,7 +42,7 @@
     "build": "webpack --mode=production --node-env=production",
     "build:dev": "webpack --mode=development --node-env=development --watch",
     "watch": "webpack --watch --mode=development --node-env=development",
-    "test": "ospec --preload ./unit/test-setup.js",
+    "test": "ospec",
     "lint": "eslint .eslintrc.js",
     "lint:fix": "lint --fix",
     "start": "webpack serve",
