@@ -10,10 +10,7 @@ jobs:
 
 
       - name: install node modules
-        run: npm install ospec && npm install
-
-      - name: run linter
-        run: npm run lint
+        run: npm install
 
       - name: run tests
         run: npm run test && echo $?
