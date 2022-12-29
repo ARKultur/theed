@@ -20,4 +20,4 @@ jobs:
       
       - name: Print exit code
         if: steps.script.outputs.exitCode
-        run:echo "Exit code: ${{ steps.script.outputs.exitCode }}"
+        run: echo "Exit code: ${{ steps.script.outputs.exitCode }}"
