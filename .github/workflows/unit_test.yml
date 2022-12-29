@@ -1,0 +1,23 @@
+name: UT
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+
+      - name: install node modules
+        run: npm
+
+      - name: run linter
+        run: npm run lint
+
+      - name: run tests
+        run: npm run test
+      
+      - name: Print exit code
+        if: steps.script.outputs.exitCode
+        run: echo "Exit code: ${{ steps.script.outputs.exitCode }}"
