@@ -10,7 +10,7 @@ jobs:
 
 
       - name: install node modules
-        run: npm
+        run: npm install
 
       - name: run linter
         run: npm run lint
