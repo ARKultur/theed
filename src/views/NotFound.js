@@ -5,6 +5,7 @@ import HomePageButton from "../components/Buttons/HomePageButton";
 
 const NotFoundView = {
     view: function (_vnode) {
+        document.title = "ARKultur - 404";
         return m('root', [
             m(TopbarComponent),
             m('section', {
