@@ -19,5 +19,4 @@ jobs:
         run: npm run test
       
       - name: Fail if exit code is not 0
-        if: steps.script.outputs.exitCode != 0
-        run: echo "Exit code was not 0"
+        run: echo "Exit code was ${{steps.script.outputs.exitCode}}"
