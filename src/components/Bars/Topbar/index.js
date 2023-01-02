@@ -75,6 +75,9 @@ const TopbarComponent = {
         return m('header', {
             'class': 'fixed w-full',
         },
+            m('link[rel=icon][type=image/x-icon]', {
+                href: 'public/images/icon-black.png'
+            }),
             m('nav', {
                 'class': 'bg-white border-gray-200 py-2.5 dark:bg-gray-900'
             },

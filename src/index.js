@@ -15,6 +15,7 @@ import NotFoundView from "./views/NotFound";
 import MaintenanceView from "./views/Maintenance";
 import TeamView from "./views/TeamView";
 import ProjectView from "./views/ProjectView";
+import ProfileView from "./views/Profile";
 
 m.route.prefix ="";
 
@@ -33,6 +34,7 @@ m.route(
     '/add_nodes': AddNodeView,
     '/del_nodes': DelNodeView,
     '/project': ProjectView,
+    '/profile': ProfileView,
     '/:404': NotFoundView
 },
 );
