@@ -1,5 +1,6 @@
 import m from 'mithril';
 const {API_URL} = require('../constants/url');
+import Hasher from '../hasher'
 
 let response = {
     isValid: false,
@@ -9,6 +10,10 @@ let response = {
 
 class Authentication {
 
+    constructor()
+    {
+        this.hasher = new Hasher();
+    }
     new(ev, email, password, name) {
         ev.preventDefault(); //don't touch that
         return m.request({
@@ -50,6 +55,7 @@ class Authentication {
             },
         })
             .then(function (response) {
+                this.hasher.encrypt(response.data.jwt, true);
                 localStorage.setItem('theedJwt', response.data.jwt);
                 return true;
             })
