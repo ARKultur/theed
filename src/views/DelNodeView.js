@@ -18,13 +18,12 @@ const NodeFormComponent = {
         return m('form', {
             onsubmit: function(e) {
                 const form = new FormData(e.target);
-                
                 let points = new Array;
                 if (localStorage.hasOwnProperty("points"))
                 {
                     points = JSON.parse(localStorage.getItem("points"));
                     let new_points = points.filter(function(e) { 
-                        return (e.properties.title !== form.get("title")) 
+                        return (e.properties.title !== form.get('title')) 
                     })
                     if (new_points.length !== points.length)
                     {

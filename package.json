@@ -19,7 +19,6 @@
     "html-webpack-plugin": "^5.5.0",
     "jsdom": "^20.0.3",
     "mithril-query": "^4.0.1",
-    "ospec": "^4.1.6",
     "postcss": "^8.4.14",
     "postcss-loader": "^7.0.0",
     "postcss-nesting": "^10.2.0",
@@ -32,17 +31,27 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.11.1"
   },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false,
+    "crypto": false
+  },
   "dependencies": {
     "@mithril-icons/feather": "^1.2.0",
+    "crypto-browserify": "^3.12.0",
+    "crypto-js": "^4.1.1",
     "flowbite": "^1.5.3",
     "mapbox-gl": "^2.9.0",
-    "mithril": "^2.2.0"
+    "mithril": "^2.2.0",
+    "ospec": "^4.1.6",
+    "path-browserify": "^1.0.1"
   },
   "scripts": {
     "build": "webpack --mode=production --node-env=production",
     "build:dev": "webpack --mode=development --node-env=development --watch",
     "watch": "webpack --watch --mode=development --node-env=development",
-    "test": "ospec --preload ./unit/test-setup.js",
+    "test": "ospec",
     "lint": "eslint .eslintrc.js",
     "lint:fix": "lint --fix",
     "start": "webpack serve",
