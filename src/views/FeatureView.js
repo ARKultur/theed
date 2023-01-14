@@ -6,12 +6,13 @@ const FeatureElement = {
     view: function(vnode) {
         const alt = vnode.attrs.alt ? vnode.attrs.alt : "Image";
         const imageRight = vnode.attrs.imageRight ? 'flex-row-reverse' : 'flex-row';
+        const rounded = vnode.attrs.rounded;
 
         return m('div', {
                 'class': `flex ${imageRight} mb-4`
             }, [
                 m('img', {
-                    'class': 'inline-block h-52 w-52 rounded-full mx-4 mt-5',
+                    'class': 'inline-block mx-4 mt-5 h-52 w-52 ' + (rounded ? 'rounded-full' : ''),
                     'src': `${vnode.attrs.imageLink}`,
                     'alt': `${alt}`
                 }),
@@ -33,6 +34,7 @@ const FeatureElement = {
 
 const FeatureView = {
     view: function (_vode) {
+        document.title = "ARKultur - Feature";
         return m('root', [
             m(TopbarComponent),
             m('section', {
@@ -73,25 +75,28 @@ const FeatureView = {
                                 'class': 'items-center max-w-2xl mb-6 text-4xl font-extrabold leading-none  tracking-tight md:text-5xl xl:text-6xl dark:text-white'
                                 }, "Mobile"),
                             m(FeatureElement, {
-                                imageLink : 'https://cdn.discordapp.com/avatars/206021742932656129/6ddb90cdbd2028c418089d18a6e6521b.webp?size=256',
+                                imageLink : 'public/images/icon-hollow-white-512.png',
                                 alt: 'A feature',
                                 text: 'Arkultur offers a interactive map that allow you to see all cultural places around you. With this map feel free to (re)discover your city!',
                                 imageRight: false,
-                                title: 'Interactive Map'
+                                title: 'Interactive Map',
+                                rounded: false
                             }),
                             m(FeatureElement, {
-                                imageLink : 'https://cdn.discordapp.com/avatars/206021742932656129/6ddb90cdbd2028c418089d18a6e6521b.webp?size=256',
+                                imageLink : 'public/images/icon-hollow-white-512.png',
                                 alt: 'A feature',
                                 text: 'Augmented Reality is a very good technology to travel in the past. Look through your phone to see how the place was be in the past!',
                                 imageRight: true,
-                                title: 'Augmented Reality'
+                                title: 'Augmented Reality',
+                                rounded: false
                             }),
                             m(FeatureElement, {
-                                imageLink : 'https://cdn.discordapp.com/avatars/206021742932656129/6ddb90cdbd2028c418089d18a6e6521b.webp?size=256',
+                                imageLink : 'public/images/icon-hollow-white-512.png',
                                 alt: 'A feature',
                                 text: 'A complete management of your profile allow you to see only what you want to do.',
                                 imageRight: false,
-                                title: 'Profile'
+                                title: 'Profile',
+                                rounded: false
                             }),
                             m('h1', {
                                 'id': 'dashboardSection',
@@ -102,7 +107,8 @@ const FeatureView = {
                                 alt: 'A feature',
                                 text: 'Arkultur offers you an interactive map that facilitates the management of your cultural places.',
                                 imageRight: false,
-                                title: 'Interactive Map'
+                                title: 'Interactive Map',
+                                rounded: true
                             }),
                         ]
                     )
