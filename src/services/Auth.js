@@ -1,7 +1,40 @@
 import m from 'mithril';
 const {API_URL} = require('../constants/url');
 
+let response = {
+    isValid: false,
+    code: -1,
+    body: {}
+}
+
 class Authentication {
+
+    new(ev, email, password, name) {
+        ev.preventDefault(); //don't touch that
+        return m.request({
+            method: "POST",
+            url: API_URL + '/account',
+            body: {
+                account: {
+                    password: password,
+                    email: email,
+                    name: name,
+                    is_admin: false
+                }
+            },
+        })
+            .then(function (response) {
+                response.isValid = true;
+                return response;
+            })
+            .catch(function (err) {
+                response.isValid = false;
+                response.code = err.code;
+                response.body = err.response.errors;
+                console.log('Login error: ' + JSON.stringify(err));
+                return response;
+            });
+    }
 
     get() {
         return localStorage.getItem('theedJwt');
